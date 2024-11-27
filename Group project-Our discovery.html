@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+
+<body>
+
+    <body>
+        <header>
+            <a href="#" class="logo">CS1102 Group Project</a>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="01-Background.html">01-Background</a></li>
+                    <li><a href="02-Architecture.html">02-Architecture</a></li>
+                    <li><a href="03-Pros & Cons.html">03-Pros & Cons</a></li>
+                    <li><a href="04-Our Discovery.html" class="active">04-Our Discovery</a></li>
+                </ul>
+            </nav>
+
+        </header>
+        <canvas id="matrixRain"></canvas>
+        <script src="assets\JS\MatrixEffect.js"></script>
+
+        <section class="container">
+            <h1 class="SectionHeader">Our Discovery</h1>
+            <img src="assets\img\LLM-discovery.jpg" alt="">
+            <main>
+
+                <section class="intro">
+                    <h2>Welcome to Our Discovery Section</h2>
+                    <p>
+                        In this part of our website, we provive a user-friendly Virtual Laboratory model which allows
+                        demonstrating our
+                        knowledge of how LLMs work. Through the experiment user will observe how different parameters
+                        influence LLMs (like the
+                        number of layers and the size of the training data) and how much they affect the way the model
+                        works. Such a tactile
+                        experience helps to shed light as to the multi-layered structure of LLM training processes and
+                        the trade-offs involved
+                        in such processes, giving a better understand of these powerful tools.
+                    </p>
+
+                    <h2>Test Question:"Explain what is computer science"</h2>
+                    <main>
+                        <section class="intro">
+                            <h2>Explore the Virtual Lab</h2>
+
+                            <p>Try to adjust the parameters to see how they affect the output of a large language model.
+                            </p>
+
+                            <label for="layers" class="subtitle">Number of Layers:</label><br>
+                            <div class="slider-container">
+                                <div id="layersValue">50</div>
+                                <input type="range" id="layersSlider" min="1" max="100" value="50"
+                                    oninput="update_Slider_Value(this)">
+                            </div>
+
+                            <br>
+                            <label for="dataSize" class="subtitle">Training Data Size (GB):</label><br>
+                            <div class="slider-container">
+                                <div id="dataSizeValue">50</div>
+                                <input type="range" id="dataSizeSlider" min="1" max="100" value="50"
+                                    oninput="update_Slider_Value(this)">
+                            </div>
+
+                            <button onclick="output_generate()">Generate Text</button>
+                            <img id="loadingSpinner" src="assets\img\Spinner.gif"
+                                style="display: none; width: 50px; height: 50px;box-shadow: none;">
+                            <div id="outputText">Your generated text will appear here...</div>
+                        </section>
+                    </main>
+                    <h2>Our finding</h2>
+                    <p>
+                        Our findings highlight a crucial aspect of training LLMs: the correlation between the number of
+                        layers in the model and
+                        the magnitude of the training data. Adding more layers in general allows a model to capture the
+                        more intricate features
+                        and relationships in the data and thus possibly leading to a deeper level of precision and
+                        refinement in outputs.
+                        However, this advantage is conditioned on having enough data available. The high number of
+                        layers but low training data
+                        in the models will cause overfitting. Overfitting happens when a model learns the details and
+                        noise in the training data
+                        so much that it impairs generalization and makes that model more susceptible to malfunctions
+                        when applied to unknown
+                        data. On the contrary, a large dataset can reduce the danger of overfitting which provides an
+                        opportunity for more
+                        complex models to generalize better to the new situation.
+                    </p>
+                </section>
+
+
+
+                <script src="assets\JS\Interact_Script.js"></script>
+
+
+
+
+
+
+        </section>
+        <section class="watermarks">
+            <h4>CS1102 - Course Project - 2023/2024 Semester B</h4>
+            <p>OUYANG Zhihao - 58057756 Lam Wai Man - 56614729 CHANG SUET LAM - 56620091 Tsang Ka Ki - 57849290</p>
+        </section>
+    </body>
+
+</html>

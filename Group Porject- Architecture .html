@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+
+<body>
+
+    <body>
+        <header>
+            <a href="#" class="logo">CS1102 Group Project</a>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="01-Background.html">01-Background</a></li>
+                    <li><a href="02-Architecture.html" class="active">02-Architecture</a></li>
+                    <li><a href="03-Pros & Cons.html">03-Pros & Cons</a></li>
+                    <li><a href="04-Our Discovery.html">04-Our Discovery</a></li>
+                </ul>
+            </nav>
+
+        </header>
+        <canvas id="matrixRain"></canvas>
+        <script src="assets\JS\MatrixEffect.js"></script>
+        <section class="container">
+            <h1 class="SectionHeader">Architecture of LLMs</h1>
+            <img src="assets\img\LLMs-Building-Blocks.jpg" alt="">
+            <main>
+                <section class="intro">
+                    <h2>Basic Architecture of LLMs:</h2>
+                    <p>Large language models are mainly built upon the architecture of Transformer, which is a kind of
+                        neural network that
+                        constructed by multiple layers, and also adopting similar pre-training objectives like language
+                        modeling as small
+                        language models. However, the model size, data size, and total computation of large language
+                        models are significantly
+                        extended. </p>
+                    <h3>Three mainstream architectures</h3>
+                    <ol>
+                        <li>blue: attention between prefix tokens</li>
+                        <li>green: attention between prefix and target tokens</li>
+                        <li>yellow: attention between target tokens, grey: masked attention</li>
+                    </ol>
+                    <img src="assets\img\architectures.png">
+                    <h3>Causal Decoder Architecture</h3>
+                    <p> This architecture includes a one-way attention mask to ensure that
+                        each input token can focus on the past tokens and itself only. The input and output tokens are
+                        processed in the same way by the decoder.</p>
+                    <h3>Prefix Decoder Architecture:</h3>
+                    <p> This architecture modifies the mask mechanism of the causal decoder
+                        to allow two-way attention to the prefix token and only one-way attention to the generated
+                        token. In this way, just like encoder-decoder architecture, the prefix decoder can encode the
+                        prefix sequence bidirectionally and automatically regression to predict the output label one by
+                        one, where the same parameters are shared during encoding and decoding. Instead of pre-training
+                        from scratch, it seems better to continuously train the causal decoder and then convert it into
+                        a prefix decoder to speed up the convergence.</p>
+                    <h3>Encoder-decoder Architecture:</h3>
+                    <p> This architecture consists of two stacks of Transformer modules, one
+                        as an encoder and other one as a decoder. The encoder encodes the input sequence with stacked
+                        multi-head self-attention layers to generate its underlying representation, while the decoder
+                        cross-focuses on these representations and autoregressively generates the target sequence.</p>
+
+                </section>
+            </main>
+            <main>
+                <section class="intro">
+                    <h2>Emergent Abilities of LLMs:</h2>
+                    <p>These are the main differences between large language models and small language models that
+                        including the following abilities:</p>
+                    <ul>
+                        <li>In-context learning: If natural language instructions and multiple task demonstrations has
+                            been already provided by the language model, the LLMs can generate the expected output for
+                            the test instance by completing a sequence of words from the input text without additional
+                            training or gradient updates.</li>
+                        <li>Instruction following: By fine-tuning multitask datasets formatted with natural language
+                            descriptions, LLM performs well on invisible tasks described in the form of instructions.
+                            With instruction tuning, LLM can follow the task instructions of a new task without using
+                            explicit examples, which shown a higher generalization ability.</li>
+                        <li>Step-by-step reasoning: By cue strategy of Chain of Thought (CoT), LLMS can solve complex
+                            tasks involving multiple reasoning steps that small language model cannot do by utilizing a
+                            cue mechanism involving intermediate reasoning steps to derive a final answer. Presumably,
+                            this ability may have been acquired through code training.</li>
+                    </ul>
+
+                </section>
+            </main>
+            <main>
+                <section class="intro">
+                    <h2>Key Techniques for LLMs:</h2>
+                    <ul>
+                        <li>Scaling: Scaling laws are formed to improve the capacity of large language models by help to
+                            predict the task levels and the performance of larger models based on that of smaller
+                            models.</li>
+                        <li>Training: To give a more accurate response to the tasks, numerous of data sets and
+                            information are input to train the models.</li>
+                        <li>Ability eliciting: After pre-training in large-scale corpora, LLMs are endowed with the
+                            potential ability as a general task solver.</li>
+                        <li>Alignment tuning: To align the response given by LLMs with human values to avoid any content
+                            that is toxic, biased, or even harmful to human.</li>
+                        <li>Tools manipulation: To compensate the insufficiency of LLMs in tasks other than text
+                            generators, LLMs are designed to have the ability to manipulate external tools like
+                            calculators or search engines …etc.</li>
+                    </ul>
+                </section>
+            </main>
+
+
+        </section>
+        <section class="watermarks">
+            <h4>CS1102 - Course Project - 2023/2024 Semester B</h4>
+            <p>OUYANG Zhihao - 58057756 Lam Wai Man - 56614729 CHANG SUET LAM - 56620091 Tsang Ka Ki - 57849290</p>
+        </section>
+    </body>
+
+</html>
